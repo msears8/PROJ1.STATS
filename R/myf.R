@@ -2,7 +2,7 @@
 #'
 #' @param x
 #'
-#' @return a vector of square components
+#' @return a vector of squared components in the form of a vector project
 #' @export
 #'
 #' @examples
