@@ -6,7 +6,7 @@
 #' @export
 #'
 #' @examples
-#'
+#'(enter z array, return standard value squared)
 sdvalue=function(z){
   (sd(z))^2
 }
