@@ -1,4 +1,5 @@
-#' @title A function for finding the z values.
+#' @title S squared function
+#' @Description A function for finding the z values.
 #'
 #' @param z The z values for a dataset
 #'
@@ -6,7 +7,7 @@
 #' @export
 #'
 #' @examples
-#'(enter z array, return standard value squared)
+#'obj=mpg.df$MPG; z=(obj-mean(obj))/sd(obj); s2value(z)
 s2value=function(z){
   (sd(z))^2
 }

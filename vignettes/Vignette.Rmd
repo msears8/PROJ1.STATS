@@ -1,0 +1,70 @@
+---
+title: "Vignette"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(PROJ1.STATS)
+```
+
+## marbles
+This function returns a sample size 'n' of black and white marbles drawn without replacement.
+```{r}
+PROJ1.STATS::marbles(4, 6, 10)
+```
+
+## myboot2
+This function takes a list of sample values and creates a histogram from the object parameters, as well as a confidence interval.
+```{r}
+PROJ1.STATS::myboot2(10000,x=c(1,2,3,4,5),fun="mean",alpha=0.05,xlab="mean",col="Purple",cx=1.5)
+```
+
+## myci
+This function returns the confidence interval of dataset x.
+```{r}
+PROJ1.STATS::myci(rnorm(30,mean=10,sd=12))
+```
+## myclt
+This program returns a histogram created from a vector (sm), which contains the sum of each column that is comprised of random deviates from the from the uniform distribution on the interval from min (a) to max (b).
+```{r}
+PROJ1.STATS::myclt(20, iter=10000)
+```
+
+## myf
+This function raises the input 'x' to the power of 2. 
+```{r}
+PROJ1.STATS::myf(27)
+```
+
+## mymaxlik
+This function produces a plot of the maximum liklihood probability p for the number of successes y in the amount of trials. 
+```{r}
+PROJ1.STATS::mymaxlik(x=c(3, 3, 4, 3, 4, 5, 5, 4),param=seq(0,1,length=20),lfun=function(x, param)dbinom(x,prob=param,size=10),xlab=expression("p"),main="Binomial",cex.main=2)
+```
+
+## myncurve
+This function produces a normal curve with the input parameters, the shaded area representing probability, and the probability value.
+```{r}
+PROJ1.STATS::myncurve(2, 0, 1)
+```
+
+## s2value
+This function returns the $s^2$ value of a dataset, particularly of the z values. It is demonstrated with the 'fire' data. 
+```{r}
+ob = PROJ1.STATS::fire
+obj=ob$DAMAGE
+z=(obj-mean(obj))/sd(obj)
+PROJ1.STATS::s2value(z)
+```
+
